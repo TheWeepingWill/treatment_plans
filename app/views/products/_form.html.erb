@@ -1,0 +1,25 @@
+<%= form_with model: product do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :cost %><br>
+    <%= form.text_area :cost %>
+  </div>
+
+   <div>
+    <%= form.label :square_feet %><br>
+    <%= form.text_area :square_feet %>
+  </div>
+
+   <div>
+    <%= form.label :type %><br>
+    <%= form.text_area :group %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

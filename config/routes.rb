@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get "products/index"
-  get "products/show"
-  get "products/new"
-  get "products/update"
+  root "products#index"
+  resources :products
+  resources :treatment_plans
+  resources :treatments
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

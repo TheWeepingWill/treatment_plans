@@ -1,2 +1,15 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<h1>Name: <%= @product.name %></h1>
+<p>Cost: <%= @product.cost %></p>
+<p>Square Feet: <%= @product.square_feet %></p>
+<p>Group: <%= @product.group %></p>
+<p>Cost Per Square Foot: <%= @product.cost_per_square_foot %></p>
+
+<ul>
+ <li><%= link_to "Edit Product", edit_product_path %></li>
+ <li><%= link_to "Product Index", products_path %></li>
+ <li><%= link_to "New Product", new_product_path %></li>
+ <li><%= link_to "Remove Product", product_path(@product), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
