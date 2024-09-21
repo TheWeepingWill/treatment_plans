@@ -1,0 +1,11 @@
+<h1>Treatment</h1>
+<ul>
+  <% @treatments.each do |treatment| %>
+  <li>
+   <b> 
+     Name: <%=link_to treatment.name, treatment%>  
+   </b>
+     <% end %> 
+  <ul>
+
+ <%= link_to "New Treatment", new_treatment_path %>

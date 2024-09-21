@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "products#index"
+  root "treatments#index"
   resources :products
   resources :treatment_plans
   resources :treatments

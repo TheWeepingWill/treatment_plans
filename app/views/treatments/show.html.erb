@@ -1,0 +1,11 @@
+<h1>Name: <%= @treatment.name %></h1>
+
+<ul>
+ <li><%= link_to "Edit Treatment", edit_treatment_path %></li>
+ <li><%= link_to "Treatment Index", treatments_path %></li>
+ <li><%= link_to "New Treatment", new_treatment_path %></li>
+ <li><%= link_to "Remove Treatment", treatment_path(@treatment), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
