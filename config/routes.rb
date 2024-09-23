@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :treatment_products
   root "treatments#index"
   resources :products
   resources :treatment_plans
