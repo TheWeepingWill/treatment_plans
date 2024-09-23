@@ -9,9 +9,11 @@ class TreatmentsController < ApplicationController
 
   def new
     @treatment = Treatment.new
+    @products = Product.all
   end
   def create 
     @treatment = Treatment.new(treatment_params)
+    @treatment.products.push(Product.find(treatment_params[:product_id]))
 
     if @treatment.save
       redirect_to @treatment
@@ -21,11 +23,12 @@ class TreatmentsController < ApplicationController
   end
   def edit
     @treatment = Treatment.find(params[:id])
+    @products = Product.all
   end
 
   def update
     @treatment = Treatment.find(params[:id])
-
+    @treatment.products.push(Product.find(treatment_params[:product_id]))
     if @treatment.update(treatment_params)
       redirect_to @treatment
     else
@@ -42,6 +45,6 @@ class TreatmentsController < ApplicationController
 
   private
   def treatment_params
-    params.require(:treatment).permit(:name)
+    params.require(:treatment).permit(:name, :product_id)
   end
 end
