@@ -9,6 +9,6 @@ class Product < ApplicationRecord
   attr_accessor :cost_per_square_foot
 
   def cost_per_square_foot
-    @cost_per_square_foot = (self.cost/self.square_feet).round(4)
+    self[:cost_per_square_foot] = (self.cost/self.square_feet).round(4)
   end
 end

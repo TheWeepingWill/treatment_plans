@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_24_185239) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_24_202814) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.float "cost"
@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_24_185239) do
     t.text "group"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "cost_per_square_foot"
   end
 
   create_table "treatment_plan_treatments", force: :cascade do |t|
@@ -56,6 +57,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_24_185239) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "product_id"
+    t.float "price_per_square_foot"
   end
 
   add_foreign_key "treatment_plan_treatments", "treatment_plans"

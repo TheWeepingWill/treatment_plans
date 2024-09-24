@@ -2,8 +2,10 @@
 <ul> 
   <% @treatment.products.each do |product|  %>
   <li>
-   Product: <%= product.name %>
+   Product Name: <%= product.name %>
   <% end %>
+    <li>
+    Price Per Square Foot: $<%= @treatment.price_per_square_foot %>
 <ul>
 
 

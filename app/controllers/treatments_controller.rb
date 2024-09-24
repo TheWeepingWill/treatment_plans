@@ -14,6 +14,7 @@ class TreatmentsController < ApplicationController
   def create 
     @treatment = Treatment.new(treatment_params)
     @treatment.products.push(Product.find(treatment_params[:product_id]))
+    @treatment.price_per_square_foot
 
     if @treatment.save
       redirect_to @treatment
