@@ -1,0 +1,28 @@
+<%= form_with(model: treatment_plan) do |form| %>
+  <% if treatment_plan.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(treatment_plan.errors.count, "error") %> prohibited this treatment_plan from being saved:</h2>
+
+      <ul>
+        <% treatment_plan.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div>
+    <%= form.label :square_feet, style: "display: block" %>
+    <%= form.number_field :square_feet %>
+  </div>
+
+  <div>
+    <%= form.label :type_of_grass, style: "display: block" %>
+    <%= form.text_field :type_of_grass %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
