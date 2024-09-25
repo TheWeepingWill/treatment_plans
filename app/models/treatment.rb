@@ -11,7 +11,7 @@ class Treatment < ApplicationRecord
   end
 
   def price_per_square_foot
-    self[:price_per_square_foot] = self.products.first.cost_per_square_foot*margin
-  
+    self[:price_per_square_foot] = (self.products.first.cost_per_square_foot*margin).round(4)
+    
   end
 end

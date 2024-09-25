@@ -22,6 +22,7 @@ class TreatmentPlansController < ApplicationController
   # POST /treatment_plans or /treatment_plans.json
   def create
     @treatment_plan = TreatmentPlan.new(treatment_plan_params)
+    @treatment_plan.annual_cost
 
     respond_to do |format|
       if @treatment_plan.save
